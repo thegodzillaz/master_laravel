@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('selamat_datang');
+Auth::routes();
+
+Route::get('/','HomeController@home');
+Route::get('home','HomeController@home');
+Route::get('logout', function(){
+    Auth::logout();
+    return redirect('login');
 });
+
+Route::get('register', 'RegisterController@getRegister');
+Route::post('register/create', 'RegisterController@postRegister');
+Route::get('login', 'LoginController@getLogin')->name('login');
+Route::post('login/post', 'LoginController@postLogin');
+Route::post('login', 'LoginController@postLogin');
