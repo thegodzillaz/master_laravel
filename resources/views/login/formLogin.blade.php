@@ -45,7 +45,7 @@
             <label>
                 <a href="{{url('register')}}">Register</a>
             </label>
-            </div>
+        </div>
       </form>
 
     </div> <!-- /container -->

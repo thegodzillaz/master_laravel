@@ -8,14 +8,8 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Signin Template for Bootstrap </title>
-
-    <!-- Bootstrap core CSS -->
-
-    <!-- <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    Cutom styles for this template
-    <link href="signin.css" rel="stylesheet"> -->
+    <title>Form Registrasi Member</title>
+    {{--  --}}
     <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('js/bootstrap.js') }}" rel="script">
   </head>
@@ -41,8 +35,8 @@
         <label for="password" class="sr-only">Password</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
 
-        <label for="password2" class="sr-only">Password</label>
-        <input type="password" id="password2" name="password2" class="form-control" placeholder="Password Veryvication" required>
+        <label for="password_verify" class="sr-only">Password</label>
+        <input type="password" id="password_verify" name="password2" class="form-control" placeholder="Password Veryvication" required>
 
         <div class="checkbox">
           <label>
