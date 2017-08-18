@@ -25,4 +25,7 @@ Route::post('register/create', 'RegisterController@postRegister');
 Route::get('login', 'LoginController@getLogin')->name('login');
 Route::post('login/post', 'LoginController@postLogin');
 Route::post('login', 'LoginController@postLogin');
-Route::get('admin', 'AdminPageController@show')->name('admin.dashboard')->middleware('auth');
+Route::get('admin', 'AdminPageController@show')->name('admin.dashboard')->middleware('rule:admin');
+Route::get('error_page', function(){
+    return view('error_page');
+})->name('error.page');

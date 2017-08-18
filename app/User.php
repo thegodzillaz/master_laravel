@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'username', 'email', 'password',
     ];
 
     /**
@@ -28,6 +28,18 @@ class User extends Authenticatable
     ];
 
     public function role(){
-        return $this->belongsTo(Role::class);
+        return $this->belongsTo(Role::class, 'roles_id');
+    }
+
+    public function punyaRule($namaRule){
+      //  dd($this->role);
+        if($this->role->namaRule == $namaRule){
+          return true;
+        }else{
+          return false;
+        }
+    }
+    public function getNamaRule(){
+      return $this->role->namaRule;
     }
 }

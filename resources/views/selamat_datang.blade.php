@@ -79,9 +79,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Tuah Oktorino
+                    {{$data['name']}}
                 </div>
-                <div>selamat Datang Member</div>
+                <div>Anda login sebagai Member <b>{{$data['rule']}}</b></div>
                 <div class="links">
                     <a href="{{url('login')}}">Login</a>
                     <a href="{{url('register')}}">Register</a>

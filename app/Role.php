@@ -9,6 +9,6 @@ class Role extends Model
     protected $table='roles';
 
     public function user(){
-    	return $this->hasMany(User:Class)	
+    	return $this->hasMany(User::class);
     }
 }

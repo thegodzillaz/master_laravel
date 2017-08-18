@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -11,7 +12,14 @@ class HomeController extends Controller
     }
 
     public function home(){
-      return view('selamat_datang');
+      $user=array(
+        'username' => Auth::User()->username,
+        'name'=> Auth::User()->name,
+        'rule'=> Auth::User()->getNamaRule()
+      );
+
+      return view('selamat_datang',['data'=>$user]);
+
     }
 
     protected function redirectTo(){
