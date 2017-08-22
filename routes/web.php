@@ -13,11 +13,14 @@
 
 Auth::routes();
 
-Route::get('/','HomeController@home');
-Route::get('home','HomeController@home');
+Route::get('/', 'FrontEndController@home');
+Route::get('home','FrontEndController@home');
+//bagian dashboard admin
+
+//Route::get('dashboard','HomeController@home')->name('admin.dashboard');
 Route::get('logout', function(){
     Auth::logout();
-    return redirect('login');
+    return redirect('home');
 });
 
 Route::get('register', 'RegisterController@getRegister');
@@ -25,7 +28,10 @@ Route::post('register/create', 'RegisterController@postRegister');
 Route::get('login', 'LoginController@getLogin')->name('login');
 Route::post('login/post', 'LoginController@postLogin');
 Route::post('login', 'LoginController@postLogin');
-Route::get('admin', 'AdminPageController@show')->name('admin.dashboard')->middleware('rule:admin');
+
+
+Route::get('dashboard','AdminPageController@home')->name('admin.dashboard');
+Route::get('admin', 'AdminPageController@show')->name('admin.dashboard')->middleware('rule:admin','auth');
 Route::get('error_page', function(){
     return view('error_page');
 })->name('error.page');
