@@ -17,7 +17,13 @@
   <body>
 
     <div class="container">
-
+      @if (count($errors)>0)
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      @endif
       <form action="{{url('register/create')}}" method="post" class="form-signin">
 
         <!-- <input type="hidden" name="_token" value=" --><!-- "> -->
@@ -35,8 +41,8 @@
         <label for="password" class="sr-only">Password</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
 
-        <label for="password_verify" class="sr-only">Password</label>
-        <input type="password" id="password_verify" name="password2" class="form-control" placeholder="Password Veryvication" required>
+        <label for="password_confirmation" class="sr-only">Password</label>
+        <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Password Veryvication" required>
 
         <div class="checkbox">
           <label>

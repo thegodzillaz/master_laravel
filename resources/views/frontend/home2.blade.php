@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
 <head>
-    <title>MeatKing</title>
+    <title>Ater-Ater</title>
 
     <!-- meta -->
     <meta charset="utf-8">
@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><h2>Ayam Goreng Bu Asri</h2></a>
+                <a class="navbar-brand" href="#"><h2>Ater-Ater</h2></a>
             </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
             <div class="hidden-xs" id="logo"><a href="#header">
@@ -51,7 +51,7 @@
                 <li><a href="#chefs">Our Chefs</a></li>
 
 
-                <li><a href="#facts">Facts</a></li>
+                {{-- <li><a href="#facts">Facts</a></li> --}}
                 <li><a href="#food-menu">Food Menu</a></li>
                 <li><a href="#special-offser">Special Offers</a></li>
                 <a href="{{url('/login')}}" style="color:white;">Login</a>
@@ -70,9 +70,10 @@
         <div class="bg-overlay"></div>
         <div class="center text-center">
             <div class="banner">
-                <h1 class="" style="font-size:35px;">Ayam Goreng Bu Asri</h1>
+                <h1 class="" style="font-size:42px;">Ater-Ater.com</h1>
             </div>
-            <div class="subtitle"><h4>Ayam goreng kremes tiada tanding</h4></div>
+            <div class="subtitle"><h4>Ayam goreng ater-ater</h4></div>
+            <div class="subtitle"><h5>Yogyakarta Delivery Only</h5></div>
         </div>
         <div class="bottom text-center">
             <a id="scrollDownArrow" href="#"><i class="fa fa-chevron-down"></i></a>
@@ -83,28 +84,28 @@
     <div id="story" class="light-wrapper">
         <section class="ss-style-top"></section>
         <div class="container inner">
-            <h2 class="section-title text-center">Our Story</h2>
-            <p class="lead main text-center">Ayam goreng bu Asri terkanal sejak 1987</p>
+            <h2 class="section-title text-center">Ater-Ater.com</h2>
+            <p class="lead main text-center">Ayam goreng ater ater</p>
             <div class="row text-center story">
                 <div class="col-sm-4">
                     <div class="col-wrapper">
-                        <div class="icon-wrapper"> <i class="fa fa-anchor"></i> </div>
-                        <h3>EST. 1879</h3>
-                        <p>Berdiri sejak tahu 1987. bermulai dari pesanan terter/box untuk acara/even seperti Pernikahan, Ater-ater, Qiqah, dan acara-acara lainnya.</p>
+                        <div class="icon-wrapper">{{-- <i class="fa fa-anchor"></i> --}} <img src="theme_meatking/icons/event.png"></div>
+                        <h3>Untuk Berbagai macam acara </h3>
+                        <p>Terter Nasi box untuk acara/even seperti <b>Pernikahan</b>, <b>Qiqah</b>, <b>Ulang tahun</b>,dan acara-acara lainnya.</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="col-wrapper">
-                        <div class="icon-wrapper"> <i class="fa  fa-cutlery"></i> </div>
+                        <div class="icon-wrapper"><img src="theme_meatking/icons/chiken2.svg"> </div>
                         <h3>Bumbu Tradisional</h3>
                         <p>Menggnakan bumbu tradision, Turun temurun resep rahasia masakan bu Asri tetap dijaga kualitas rasanya, dengan kualitas rasa yang tinggi akan menjadi cirikhas dilidah anda.</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="col-wrapper">
-                        <div class="icon-wrapper"> <i class="fa fa-coffee"></i> </div>
-                        <h3>Jaminan Mutu</h3>
-                        <p>Dengan kualitas ayam yang segar, bersih dan higienis,</p>
+                        <div class="icon-wrapper"> <img src="theme_meatking/icons/free-delvery.png"> </div>
+                        <h3>Free Delivery</h3>
+                        <p>Pengantaran gratis berlaku selama masih dalam kota <b>(Yogyakarta)</b></p>
                     </div>
                 </div>
             </div>
@@ -522,13 +523,13 @@
     </div><!-- /#chefs -->
 
 
-    <footer id="footer" class="dark-wrapper">
+    <footer id="footer" class="dark-wrapper" style="background-color:brown;">
         <section class="ss-style-top"></section>
         <div class="container inner">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; Copyright MeatKing 2014
-                    <br/>Theme By <a class="themeBy" href="http://www.Themewagon.com">ThemeWagon</a>
+                    &copy; tuah.oktorino@gmail.com
+                    {{-- <br/>Theme By <a class="themeBy" href="http://www.Themewagon.com">ThemeWagon</a> --}}
                 </div>
                 <div class="col-sm-6">
                     <div class="social-bar">

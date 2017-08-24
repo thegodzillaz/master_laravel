@@ -19,21 +19,26 @@ class RegisterController extends Controller
     }
 
     public function postRegister(Request $request){
-      if($request->passwrod == $request->password_verify){
-      	$user=new User();
-      	$user->name    =$request->name;
-      	$user->username=$request->username;
-      	$user->email   =$request->email;
-      	$user->password=bcrypt($request->password);
-      	$user->roles_id=DB::table('roles')
-          ->select('id')
-          ->where('namaRule','user')
-          ->first()->id;
-        $user->save();
-        return redirect('login');
-      }else {
-        echo "Verfication password unproperly";
-        return redirect('register');
-      }
+      $this->validate($request, [
+          'name'    => 'required|min:5',
+          'username'=> 'required|unique:users|min:5',
+          'email'   => 'required|unique:users|min:5',
+          'password'=> 'required|confirmed|min:5',
+        ]
+      );
+
+      $user=new User();
+      $user->name    =$request->name;
+      $user->username=$request->username;
+      $user->email   =$request->email;
+      $user->password=bcrypt($request->password);
+      $user->roles_id=DB::table('roles')
+        ->select('id')
+        ->where('namaRule','user')
+        ->first()->id;
+        
+
+      $user->save();
+      return redirect('login');
     }
 }

@@ -225,7 +225,7 @@ section::before,section::after {
 ========================================================================== */
 .parallax {
     /*background:url(../img/parallax1.jpg) fixed no-repeat center center;*/
-    background:url(../img/herbs-and-spices.jpg) fixed no-repeat center center;
+    background:url(../img/bumbu-dapur-kering.jpg) fixed no-repeat center center;
     -webkit-background-size:/*@@prefixmycss->No equivalent*/;
     -moz-background-size:cover;
     -o-background-size:/*@@prefixmycss->No equivalent*/;
@@ -423,7 +423,9 @@ section::before,section::after {
     font-weight:bold;
 }
 .dark-wrapper .ss-style-top::before {
-    background-image:linear-gradient(315deg,#ed0121 50%,transparent 50%),linear-gradient(45deg,#ed0121 50%,transparent 50%);
+  /*background-image:linear-gradient(315deg,#ed0121 50%,transparent 50%),linear-gradient(45deg,#ed0121 50%,transparent 50%);*/
+    background-image:linear-gradient(315deg,brown 50%,transparent 50%),linear-gradient(45deg,brown 50%,transparent 50%);
+    /*background-color:brown;*/
 }
 .social-bar {
     width:100%;

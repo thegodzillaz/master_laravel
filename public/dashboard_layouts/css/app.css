@@ -1,0 +1,40 @@
+.wrap {
+  position: relative;
+}
+.wrap .nav-bar .navbar-brand {
+  margin-top: 15px;
+}
+.wrap .nav-bar .navbar-form {
+  margin-top: 25px;
+}
+.wrap .nav-bar .nav {
+  float: right !important;
+}
+.wrap .nav-bar .nav .dropdown span.fa,
+.wrap .nav-bar .nav .dropdown span.caret {
+  margin-right: 10px;
+}
+.wrap .nav-bar .nav .dropdown-menu {
+  background: #222;
+  left: auto;
+  width: 200px;
+  right: 0;
+}
+.wrap .nav-bar .nav .dropdown-menu > li > a {
+  color: #ddd;
+  padding: 8px;
+}
+.wrap .nav-bar .nav .dropdown-menu > li > a:hover {
+  background: #3355ff;
+}
+.wrap .side-menu-link {
+  left: 21em;
+}
+.wrap .burger {
+  position: relative;
+  width: 35px;
+  height: 30px;
+  left: 10px;
+  top: 5px;
+  z-index: 500000;
+}

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
-class AdminPageController extends Controller
+class DashboardController extends Controller
 {
     //
     // public function __construct(){

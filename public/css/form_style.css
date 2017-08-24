@@ -1,0 +1,14 @@
+.grdbiru{
+    color: white;
+    background: #365578;
+    background: -moz-linear-gradient(top, #365578 0%, #0E0E3D 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#365578), color-stop(100%,#0E0E3D));
+    background: -webkit-linear-gradient(top, #365578 0%,#0E0E3D 100%);
+    background: -o-linear-gradient(top, #365578 0%,#0E0E3D 100%);
+    background: -ms-linear-gradient(top, #365578 0%,#0E0E3D 100%);
+    background: linear-gradient(to bottom, #365578 0%,#0E0E3D 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#365578', endColorstr='#0E0E3D',GradientType=0 );
+}
+.grdbiru .wrapper{
+  color:white;
+}

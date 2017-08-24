@@ -30,8 +30,10 @@ Route::post('login/post', 'LoginController@postLogin');
 Route::post('login', 'LoginController@postLogin');
 
 
-Route::get('dashboard','AdminPageController@home')->name('admin.dashboard');
-Route::get('admin', 'AdminPageController@show')->name('admin.dashboard')->middleware('rule:admin','auth');
+Route::get('dashboard','DashboardController@home')->name('admin.dashboard')->middleware('auth');
+Route::get('admin', 'DashboardController@show')->name('admin.dashboard')->middleware('rule:admin','auth');
+Route::get('user', 'DashboardController@user');
+
 Route::get('error_page', function(){
     return view('error_page');
 })->name('error.page');
