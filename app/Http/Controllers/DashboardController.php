@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -18,11 +19,19 @@ class DashboardController extends Controller
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-             $user=array(
-               'username' => Auth::User()->username,
-               'name'=> Auth::User()->name,
-               'rule'=> Auth::User()->getNamaRule()
-             );
+             if(Auth::User() != null){
+               $user=array(
+                 'username' => Auth::User()->username,
+                 'name'     => Auth::User()->name,
+                 'rule'     => Auth::User()->getNamaRule()
+               );
+            }else{
+              $user=array(
+                'username' => "Guest",
+                'name'     => "Guest",
+                'rule'     => "Guest",
+              );
+            }
              $this->user=$user;
             return $next($request);
         });
@@ -47,7 +56,18 @@ class DashboardController extends Controller
 
     public function user()
     {
-      return view('dashboard.users_data', ['data'=>$this->user]);
+      $cari = "";
+
+        // $userData =User::join('roles', 'roles_id', '=', 'roles.id')->
+        //   where('namaRule', 'like',  '%'.$cari.'%')
+        //   ->paginate(10);
+
+      $userData2 =User::whereHas('role', function ($query) use($cari) {
+            $query->where('namaRule', 'like', '%'.$cari.'%');
+          })
+          ->with('role')
+          ->get();
+       return view('dashboard.users_data', ['data'=>$this->user], ['userData'=>$userData2]);
     }
 
     public function formAddUser(){

@@ -7,5 +7,10 @@
 @endsection
 
 @section('content')
-    <p>This is my body conteasdfsfnt.</p>
+    <ul>
+    @foreach ($userData as $datas)
+    {{-- //  {{dd($datas)}} --}}
+      <li>{{$datas->name}} @ {{$datas->role->namaRule}}</li>
+    @endforeach
+    <ul>
 @endsection

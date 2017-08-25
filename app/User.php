@@ -28,10 +28,11 @@ class User extends Authenticatable
     ];
 
     public function role(){
-        return $this->belongsTo(Role::class, 'roles_id');
+        return $this->belongsTo('App\Role', 'roles_id');
     }
 
-    public function punyaRule($namaRule){
+    public function punyaRule($namaRule)
+    {
       //  dd($this->role);
         if($this->role->namaRule == $namaRule){
           return true;
