@@ -32,7 +32,8 @@ Route::post('login', 'LoginController@postLogin');
 
 Route::get('dashboard','DashboardController@home')->name('admin.dashboard')->middleware('auth');
 Route::get('admin', 'DashboardController@show')->name('admin.dashboard')->middleware('rule:admin','auth');
-Route::get('user', 'DashboardController@user');
+Route::get('user', 'UserController@show');
+Route::get('user/delete/{id}', 'UserController@delete');
 
 Route::get('error_page', function(){
     return view('error_page');

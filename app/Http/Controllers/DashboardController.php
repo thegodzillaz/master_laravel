@@ -66,6 +66,7 @@ class DashboardController extends Controller
             $query->where('namaRule', 'like', '%'.$cari.'%');
           })
           ->with('role')
+          ->where('userName', '!=' ,$this->user['username'])
           ->get();
        return view('dashboard.users_data', ['data'=>$this->user], ['userData'=>$userData2]);
     }

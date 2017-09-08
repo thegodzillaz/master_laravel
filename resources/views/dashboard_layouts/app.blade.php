@@ -14,6 +14,7 @@
 
         </script>
 
+
     </head>
     <body onload="menuAktif();">
         @section('navbar')  <!-- Bagian navigasi bar -->
@@ -67,7 +68,7 @@
                 </div><!-- /.container-fluid -->
               </nav>
             @show
-            <div class="container well form-horizontal frame-content grdbiru">
+            <div class="container well form-horizontal frame-content">
               @yield('content')  <!--Append on here -->
             </div>
             <div style="margin-bottom: 25px;">
