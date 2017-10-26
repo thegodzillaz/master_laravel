@@ -61,6 +61,43 @@ class UsersTableSeeder extends Seeder
             'name' => 'chilo is my cat',
             'password' => bcrypt('12345'),
           ],
+          //SDO_DAS_DataFactory
+          [
+            'roles_id' => 1,
+            'username' => 'uke',
+            'email' => 'uke@gmail.com',
+            'name' => 'uke',
+            'password' => bcrypt('12345'),
+          ],
+          [
+            'roles_id' => 2,
+            'username' => 'maya',
+            'email' => 'maya@gmail.com',
+            'name' => 'maya',
+            'password' => bcrypt('12345'),
+          ],
+          [
+            'roles_id' => 1,
+            'username' => 'sobrin',
+            'email' => 'sobrin@gmail.com',
+            'name' => 'akhirnya dia tau',
+            'password' => bcrypt('12345'),
+          ],
+          // Sini`
+          [
+            'roles_id' => 1,
+            'username' => 'asgar',
+            'email' => 'asgar@gmail.com',
+            'name' => 'asgar',
+            'password' => bcrypt('12345'),
+          ],
+          [
+            'roles_id' => 2,
+            'username' => 'sulis',
+            'email' => 'sulis@gmail.com',
+            'name' => 'sulistia wati',
+            'password' => bcrypt('12345'),
+          ],
         ]
       );
 
