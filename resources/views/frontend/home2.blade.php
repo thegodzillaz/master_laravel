@@ -70,7 +70,7 @@
         <div class="bg-overlay"></div>
         <div class="center text-center">
             <div class="banner">
-                <h1 class="" style="font-size:42px;">Ater-Ater.com</h1>
+                <h1 class="" style="font-size:42px;">Selamat Pagi mas lulut</h1>
             </div>
             <div class="subtitle"><h4>Ayam goreng ater-ater</h4></div>
             <div class="subtitle"><h5>Yogyakarta Delivery Only</h5></div>

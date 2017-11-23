@@ -5,6 +5,8 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/form_style.css') }}" rel="stylesheet">
         <link href="{{ asset('css/mjstyle.css') }}" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
         <script src="{{asset('js/app.js') }}"></script>
         <title>@yield('title')</title>
         @yield('head')
@@ -78,8 +80,10 @@
             <div clase="halat-footer" style="height: 25px;"></div>>
             <div class="footer navbar-fixed-bottom grdbiru" style="
             font-size:larger;padding-top: 5px; color:floralwhite; width: 100%; height: 35px; text-align: center; ">
-                <h8>TB.Mataram Jaya</h8>
+                <h8>Ass Bar</h8>
             </div>
         @show
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
     </body>
 </html>

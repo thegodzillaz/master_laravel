@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\DB;
 use App\User;
+use App\Role;
+
+use Illuminate\Support\Collection;
 
 class UserController extends Controller
 {
@@ -47,26 +50,40 @@ class UserController extends Controller
        return view('dashboard.users_data2', ['data'=>$this->user], ['userData'=>$userData2]);
     }
 
-    function createAjax(Request $data){
+    function createAjax(Request $data)
+    {
+        $this->validate($data, [
+           'name'     => 'required|unique:posts|max:255',
+           'username' => 'required',
+           'email'    => 'required',
+           'password' => 'required'
+        ]);
+
         $user=new User();
         $user->name    =  $data->name;
         $user->username=  $data->username;
         $user->email   =  $data->email;
         $user->password=bcrypt($data->password);
-        $user->roles_id=1;
+        $user->roles_id= Role::where('namaRule',strtolower($data->user_type))->first()->id;
         $user->save();
 
-      $msg = "This is a simple message.";
-      $userLoad =User::get()->where('userName', '!=', $this->user['username']);
-      return response()->json(
-        [
-          'id'        => 90,//$user->id,
-          'name'      => $user->name,
-          'username'  => $user->username,
-          'email'     => $user->email,
-          'roles'     => $user->role->namaRule
-      ], 200);
+        $userLoad =User::get()->where('userName', '!=', $this->user['username']);
+        return response()->json(
+          [
+            'id'        => 90,//$user->id,
+            'name'      => $user->name,
+            'username'  => $user->username,
+            'email'     => $user->email,
+            'roles'     => $user->role->namaRule,
+            'status'    => 'success',
+            'message'   => "Crete new User success"
+        ], 200);
       //return response()->json(User::get()->where('userName', '!=', $this->user['username']));
+    }
+
+    function deleteAjax(Request $r){
+        User::where('id', $r->id)->delete();
+        return respons()->json(['message'=>'deleting success'],200);
     }
 
     function findByName($name){
@@ -94,6 +111,21 @@ class UserController extends Controller
 
     }
     function info(){
+
+    }
+    function userDataTable(){
+      $userData2 =User::where('userName', '!=', $this->user['username'])->get();
+      $userData=[];
+      foreach($userData2 as $key    => $data){
+        $userData[$key]['id']       =$data->id;
+        $userData[$key]['name']     =$data->name;
+        $userData[$key]['user_name']=$data->username;
+        $userData[$key]['email']    =$data->email;
+        $userData[$key]['role_name']=$data->role->namaRule;
+        $userData[$key]['created']  =$data->created_at?date_format($data->created_at,"d/m/Y"):"";
+        $userData[$key]['created_time']  =$data->created_at?date_format($data->created_at,"H:i:s"):"";
+      }
+      return datatables()->collection($userData)->toJson();
 
     }
 

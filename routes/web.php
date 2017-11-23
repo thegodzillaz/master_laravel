@@ -34,7 +34,8 @@ Route::get('dashboard','DashboardController@home')->name('admin.dashboard')->mid
 Route::get('admin', 'DashboardController@show')->name('admin.dashboard')->middleware('rule:admin','auth');
 Route::get('user', 'UserController@show');
 Route::post('user/create', 'UserController@createAjax');
-Route::put('user/delete/{id}', 'UserController@delete');
+Route::get('user/datatable', 'UserController@userDataTable');
+Route::put('user/delete/{id}', 'UserController@deleteAjax');
 
 
 
