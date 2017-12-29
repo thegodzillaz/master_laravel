@@ -23,7 +23,8 @@
   <body>
 
     <div class="container">
-
+      <img src="{{asset('/images/work-11.jpg')}}" alt="Image"/>
+      <img src="{{asset('/img/work-11.jpg')}}" alt="Image"/>
       <form action="{{url('login/post')}}" method="post" class="form-signin">
         <h2 class="form-signin-heading">User Member</h2>
 
